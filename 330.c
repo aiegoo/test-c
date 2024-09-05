@@ -48,4 +48,4 @@ int main() {
 // 's' (lowercase): Shifted by 10 positions -> 'c'
 // ' ' (space): Remains unchanged -> ' '
 // '8' (digit): Shifted by 3 positions -> '1'
-// The transformed string is "Nds c1".
+// The transformed string is "Nds c1". 변환된 문자열: Nd sc 1
