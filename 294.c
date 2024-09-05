@@ -39,3 +39,8 @@ int main() {
 
     return 0;
 }
+// Original array:
+// 85 75 50 100 95
+// Sorted array:
+// 50 75 85 95 100
+//
