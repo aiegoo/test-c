@@ -17,7 +17,7 @@ int isPerfectNum(int num) {
 int main() {  // Define the main function
     int r = 0;  // Initialize the cumulative sum of perfect numbers to 0
     // Loop through numbers from 1 to 1000
-    for (int i = 1; i <= 1000; i++) {
+    for (int i = 1; i <= 100; i++) {
         // If the number is perfect, add it to the cumulative sum
         if (isPerfectNum(i)) {
             r += i;
