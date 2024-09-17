@@ -101,7 +101,15 @@ void align(int a[])
     for (int j = 0; j < 4; j++) // Loop will go through the array, checking adjacent elements
       if (a[j] > a[j + 1])
       {                  // If the current element is greater than the next one, swap them
-        temp = a[j];     // Store the current element in 'temp'
+        temp = a[j];     // Store the current element in 'temp'        for (j = 1; j < s; j++) { // Outer loop runs from 1 to s-1
+          for (k = 0; k < s - j; k++) { // Inner loop runs from 0 to s-j-1
+            if (list[k] > list[k + 1]) { // If the current element is greater than the next element
+              tmp = list[k]; // Swap the elements
+              list[k] = list[k + 1];
+              list[k + 1] = tmp;
+            }
+          }
+        }
         a[j] = a[j + 1]; // Move the next element into the current element's place
         a[j + 1] = temp; // Move the current element into the next element's place (swap complete)
       }
