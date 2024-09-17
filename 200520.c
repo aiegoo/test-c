@@ -177,6 +177,9 @@ j = 3: Compare a[3] and a[4] (100 and 95). Swap them.
 temp = 100
 a[3] = 95
 a[4] = 100
+
+75 50 85 95 100
+
 Second Pass (i = 1):
 
 j = 0: Compare a[0] and a[1] (75 and 50). Swap them.
@@ -186,6 +189,9 @@ a[1] = 75
 j = 1: Compare a[1] and a[2] (75 and 85). No swap.
 j = 2: Compare a[2] and a[3] (85 and 95). No swap.
 j = 3: Compare a[3] and a[4] (95 and 100). No swap.
+
+50 75 85 95 100
+
 Third Pass (i = 2):
 
 j = 0: Compare a[0] and a[1] (50 and 75). No swap.
