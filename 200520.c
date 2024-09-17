@@ -89,3 +89,51 @@ main() {
 // 1 3 4 6 8 9
 // 1 3 4 6 8 9
 
+#include <stdio.h>
+
+// Function to perform bubble sort on array 'a[]'
+void align(int a[])
+{
+  int temp; // Temporary variable used for swapping elements
+  // Outer loop: controls the number of passes through the array
+  for (int i = 0; i < 4; i++) // Loop will run 4 times, one less than the number of elements (5 - 1)
+    // Inner loop: compares adjacent elements and swaps them if necessary
+    for (int j = 0; j < 4; j++) // Loop will go through the array, checking adjacent elements
+      if (a[j] > a[j + 1])
+      {                  // If the current element is greater than the next one, swap them
+        temp = a[j];     // Store the current element in 'temp'
+        a[j] = a[j + 1]; // Move the next element into the current element's place
+        a[j + 1] = temp; // Move the current element into the next element's place (swap complete)
+      }
+}
+
+int main()
+{
+  int a[] = {85, 75, 50, 100, 95}; // Array of 5 integers to be sorted
+  align(a);                        // Call the align function (bubble sort) to sort the array
+  // Loop to print the sorted array
+  for (int i = 0; i < 5; i++)
+  {                      // Loop through the array elements
+    printf("%d ", a[i]); // Print each element followed by a space
+  }
+  return 0;
+}
+
+/*
+Key Concepts:
+Bubble Sort:
+
+It works by repeatedly swapping adjacent elements if they are in the wrong order.
+This process is repeated until the array is sorted.
+The largest elements "bubble up" to the end of the array after each pass.
+Outer Loop (for (int i = 0; i < 4; i++)):
+
+This loop controls the number of passes. Since there are 5 elements, the loop runs 4 times (one less than the number of elements).
+Inner Loop (for (int j = 0; j < 4; j++)):
+
+In each pass, it compares adjacent elements in the array and swaps them if they are in the wrong order.
+It runs 4 times because it compares the current element with the next one (a[j] > a[j + 1]).
+Swapping:
+
+The elements are swapped using a temporary variable temp if the current element is greater than the next element.
+*/
