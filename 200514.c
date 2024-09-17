@@ -18,14 +18,33 @@ main() {  // Main function where the program starts execution
 /*
 Key Concepts:
 
-	1.	Switch Statement:
-	•	The switch evaluates the expression (3) and tries to match it with one of the case labels.
-	•	When a match is found (case 3 in this case), execution begins there, and it will continue through the subsequent cases unless a break statement is encountered.
-	•	Since no break statements are present, execution “falls through” all subsequent cases.
-	2.	Default Case:
-	•	The default case is executed because there is no break statement stopping the execution before reaching it.
-	3.	Final Value of c:
-	•	After all the operations, the final value of c is -8 which is printed.
+    1.	Switch Statement:
+    •	The switch evaluates the expression (3) and tries to match it with one of the case labels.
+    •	When a match is found (case 3 in this case), execution begins there, and it will continue through the subsequent cases unless a break statement is encountered.
+    •	Since no break statements are present, execution “falls through” all subsequent cases.
+    2.	Default Case:
+    •	The default case is executed because there is no break statement stopping the execution before reaching it.
+    3.	Final Value of c:
+    •	After all the operations, the final value of c is -8 which is printed.
+
+the changes to the variable c at each step of the switch statement:
+
+Initial value of c: c = 1
+
+Switch statement starts with case 3:
+
+case 3: c = 0 (since the switch value is 3, this case matches and c is set to 0)
+case 4: c += 3 (no break, so this line is executed next, c becomes 0 + 3 = 3)
+case 5: c -= 10 (no break, so this line is executed next, c becomes 3 - 10 = -7)
+default: c-- (no break, so this line is executed next, c becomes -7 - 1 = -8)
+So, the changes to c at each step are:
+
+Initial: c = 1
+case 3: c = 0
+case 4: c = 3
+case 5: c = -7
+default: c = -8
+Final value of c is -8.
 
 Output:
 
