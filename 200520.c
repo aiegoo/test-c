@@ -101,7 +101,15 @@ void align(int a[])
     for (int j = 0; j < 4; j++) // Loop will go through the array, checking adjacent elements
       if (a[j] > a[j + 1])
       {                  // If the current element is greater than the next one, swap them
-        temp = a[j];     // Store the current element in 'temp'
+        temp = a[j];     // Store the current element in 'temp'        for (j = 1; j < s; j++) { // Outer loop runs from 1 to s-1
+          for (k = 0; k < s - j; k++) { // Inner loop runs from 0 to s-j-1
+            if (list[k] > list[k + 1]) { // If the current element is greater than the next element
+              tmp = list[k]; // Swap the elements
+              list[k] = list[k + 1];
+              list[k + 1] = tmp;
+            }
+          }
+        }
         a[j] = a[j + 1]; // Move the next element into the current element's place
         a[j + 1] = temp; // Move the current element into the next element's place (swap complete)
       }
@@ -136,4 +144,69 @@ It runs 4 times because it compares the current element with the next one (a[j] 
 Swapping:
 
 The elements are swapped using a temporary variable temp if the current element is greater than the next element.
+
+Outer Loop (i)
+Purpose: Controls the number of passes through the array.
+Range: Runs from 0 to 3 (4 iterations).
+Effect: Each pass ensures that the largest unsorted element bubbles up to its correct position.
+Inner Loop (j)
+Purpose: Compares adjacent elements and swaps them if necessary.
+Range: Runs from 0 to 3 (4 iterations) for each pass of the outer loop.
+Effect: Each iteration of the inner loop compares a[j] with a[j + 1] and swaps them if a[j] > a[j + 1].
+Temporary Variable (temp)
+Purpose: Used to temporarily hold the value of an element during the swap.
+Effect: Holds the value of a[j] during the swap process.
+Detailed Variable Changes
+Initialization:
+
+i = 0
+j = 0
+temp is not yet used.
+First Pass (i = 0):
+
+j = 0: Compare a[0] and a[1] (85 and 75). Swap them.
+temp = 85
+a[0] = 75
+a[1] = 85
+j = 1: Compare a[1] and a[2] (85 and 50). Swap them.
+temp = 85
+a[1] = 50
+a[2] = 85
+j = 2: Compare a[2] and a[3] (85 and 100). No swap.
+j = 3: Compare a[3] and a[4] (100 and 95). Swap them.
+temp = 100
+a[3] = 95
+a[4] = 100
+
+75 50 85 95 100
+
+Second Pass (i = 1):
+
+j = 0: Compare a[0] and a[1] (75 and 50). Swap them.
+temp = 75
+a[0] = 50
+a[1] = 75
+j = 1: Compare a[1] and a[2] (75 and 85). No swap.
+j = 2: Compare a[2] and a[3] (85 and 95). No swap.
+j = 3: Compare a[3] and a[4] (95 and 100). No swap.
+
+50 75 85 95 100
+
+Third Pass (i = 2):
+
+j = 0: Compare a[0] and a[1] (50 and 75). No swap.
+j = 1: Compare a[1] and a[2] (75 and 85). No swap.
+j = 2: Compare a[2] and a[3] (85 and 95). No swap.
+j = 3: Compare a[3] and a[4] (95 and 100). No swap.
+Fourth Pass (i = 3):
+
+j = 0: Compare a[0] and a[1] (50 and 75). No swap.
+j = 1: Compare a[1] and a[2] (75 and 85). No swap.
+j = 2: Compare a[2] and a[3] (85 and 95). No swap.
+j = 3: Compare a[3] and a[4] (95 and 100). No swap.
+Summary
+Outer Loop (i): Controls the number of passes.
+Inner Loop (j): Compares and potentially swaps adjacent elements.
+Temporary Variable (temp): Holds the value of an element during the swap.
+By the end of the sorting process, the array a[] will be sorted in ascending order.
 */
